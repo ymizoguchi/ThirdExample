@@ -4,9 +4,10 @@
 //
 //  Created by Yoshihiro Mizoguchi on 2013/08/18.
 //  Copyright (c) 2013年 Yoshihiro Mizoguchi. All rights reserved.
-// git
+//
 
 #import "AppDelegate.h"
+#import "ViewController.h"
 
 @implementation AppDelegate
 
@@ -28,6 +29,10 @@
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    
+    ViewController *viewController = [[[ViewController alloc] init] autorelease];
+    self.window.rootViewController = viewController;
+    
     [self.window makeKeyAndVisible];
     return YES;
 }

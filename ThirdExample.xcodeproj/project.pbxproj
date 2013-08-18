@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		991858ED17C1089200CFD83B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991858EC17C1089200CFD83B /* AudioToolbox.framework */; };
+		991858EF17C108A500CFD83B /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991858EE17C108A500CFD83B /* OpenGLES.framework */; };
+		991858F117C108BB00CFD83B /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991858F017C108BB00CFD83B /* GLKit.framework */; };
+		991858F317C108C400CFD83B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991858F217C108C400CFD83B /* QuartzCore.framework */; };
+		991858FA17C1094400CFD83B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 991858F917C1094400CFD83B /* ViewController.m */; };
+		991858FC17C109F600CFD83B /* fruit.png in Resources */ = {isa = PBXBuildFile; fileRef = 991858FB17C109F600CFD83B /* fruit.png */; };
+		991858FF17C10A0E00CFD83B /* b2-034_swing_10.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 991858FD17C10A0E00CFD83B /* b2-034_swing_10.mp3 */; };
+		9918590017C10A0E00CFD83B /* b1-002_button_01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 991858FE17C10A0E00CFD83B /* b1-002_button_01.mp3 */; };
+		9918590117C10A2400CFD83B /* VertexShader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 991858F417C108DC00CFD83B /* VertexShader.vsh */; };
+		9918590217C10A2400CFD83B /* FragmentShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 991858F617C1090600CFD83B /* FragmentShader.fsh */; };
 		9959B8CF17C0B91700CF8EAE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9959B8CE17C0B91700CF8EAE /* UIKit.framework */; };
 		9959B8D117C0B91700CF8EAE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9959B8D017C0B91700CF8EAE /* Foundation.framework */; };
 		9959B8D317C0B91700CF8EAE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9959B8D217C0B91700CF8EAE /* CoreGraphics.framework */; };
@@ -21,6 +31,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		991858EC17C1089200CFD83B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		991858EE17C108A500CFD83B /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		991858F017C108BB00CFD83B /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		991858F217C108C400CFD83B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		991858F417C108DC00CFD83B /* VertexShader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = VertexShader.vsh; sourceTree = "<group>"; };
+		991858F617C1090600CFD83B /* FragmentShader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = FragmentShader.fsh; sourceTree = "<group>"; };
+		991858F817C1094400CFD83B /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		991858F917C1094400CFD83B /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		991858FB17C109F600CFD83B /* fruit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fruit.png; path = ThirdExample/fruit.png; sourceTree = "<group>"; };
+		991858FD17C10A0E00CFD83B /* b2-034_swing_10.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "b2-034_swing_10.mp3"; path = "ThirdExample/b2-034_swing_10.mp3"; sourceTree = "<group>"; };
+		991858FE17C10A0E00CFD83B /* b1-002_button_01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "b1-002_button_01.mp3"; path = "ThirdExample/b1-002_button_01.mp3"; sourceTree = "<group>"; };
 		9959B8CB17C0B91700CF8EAE /* ThirdExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThirdExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9959B8CE17C0B91700CF8EAE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9959B8D017C0B91700CF8EAE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -43,6 +64,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				991858F317C108C400CFD83B /* QuartzCore.framework in Frameworks */,
+				991858F117C108BB00CFD83B /* GLKit.framework in Frameworks */,
+				991858EF17C108A500CFD83B /* OpenGLES.framework in Frameworks */,
+				991858ED17C1089200CFD83B /* AudioToolbox.framework in Frameworks */,
 				9959B8CF17C0B91700CF8EAE /* UIKit.framework in Frameworks */,
 				9959B8D117C0B91700CF8EAE /* Foundation.framework in Frameworks */,
 				9959B8D317C0B91700CF8EAE /* CoreGraphics.framework in Frameworks */,
@@ -56,6 +81,13 @@
 		9959B8C217C0B91700CF8EAE = {
 			isa = PBXGroup;
 			children = (
+				991858FD17C10A0E00CFD83B /* b2-034_swing_10.mp3 */,
+				991858FE17C10A0E00CFD83B /* b1-002_button_01.mp3 */,
+				991858FB17C109F600CFD83B /* fruit.png */,
+				991858F217C108C400CFD83B /* QuartzCore.framework */,
+				991858F017C108BB00CFD83B /* GLKit.framework */,
+				991858EE17C108A500CFD83B /* OpenGLES.framework */,
+				991858EC17C1089200CFD83B /* AudioToolbox.framework */,
 				9959B8D617C0B91700CF8EAE /* ThirdExample */,
 				9959B8CD17C0B91700CF8EAE /* Frameworks */,
 				9959B8CC17C0B91700CF8EAE /* Products */,
@@ -88,6 +120,10 @@
 				9959B8E017C0B91700CF8EAE /* AppDelegate.m */,
 				9959B8E817C0B91700CF8EAE /* ThirdExample.xcdatamodeld */,
 				9959B8D717C0B91700CF8EAE /* Supporting Files */,
+				991858F417C108DC00CFD83B /* VertexShader.vsh */,
+				991858F617C1090600CFD83B /* FragmentShader.fsh */,
+				991858F817C1094400CFD83B /* ViewController.h */,
+				991858F917C1094400CFD83B /* ViewController.m */,
 			);
 			path = ThirdExample;
 			sourceTree = "<group>";
@@ -157,6 +193,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9918590117C10A2400CFD83B /* VertexShader.vsh in Resources */,
+				9918590217C10A2400CFD83B /* FragmentShader.fsh in Resources */,
+				991858FF17C10A0E00CFD83B /* b2-034_swing_10.mp3 in Resources */,
+				9918590017C10A0E00CFD83B /* b1-002_button_01.mp3 in Resources */,
+				991858FC17C109F600CFD83B /* fruit.png in Resources */,
 				9959B8DB17C0B91700CF8EAE /* InfoPlist.strings in Resources */,
 				9959B8E317C0B91700CF8EAE /* Default.png in Resources */,
 				9959B8E517C0B91700CF8EAE /* Default@2x.png in Resources */,
@@ -174,6 +215,7 @@
 				9959B8DD17C0B91700CF8EAE /* main.m in Sources */,
 				9959B8E117C0B91700CF8EAE /* AppDelegate.m in Sources */,
 				9959B8EA17C0B91700CF8EAE /* ThirdExample.xcdatamodeld in Sources */,
+				991858FA17C1094400CFD83B /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +328,7 @@
 				9959B8EF17C0B91700CF8EAE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
