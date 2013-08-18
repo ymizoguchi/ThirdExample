@@ -10,5 +10,7 @@ iPhone画面上の正方形領域をメッシュに分けて, メッシュ頂点
 変換行列をシェーダーに与える. マウスクリックも理解し, 頂点の移動と固定をトグルで行う. クリック時の効果音も入れた. 
 解説はブログ https://logic.math.kyushu-u.ac.jp/wiki/pages/a4e4z3w/Xcode_OpenGL_ES2_Texture_Mapping.html に公開中.
 
+開発環境: Xcode 4.6.3, iPhone 6.1 Simulator
+
 Yoshihro Mizoguchi
 2013/08/19
