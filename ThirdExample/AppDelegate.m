@@ -4,7 +4,7 @@
 //
 //  Created by Yoshihiro Mizoguchi on 2013/08/18.
 //  Copyright (c) 2013年 Yoshihiro Mizoguchi. All rights reserved.
-//
+// git
 
 #import "AppDelegate.h"
 
