@@ -1,4 +1,4 @@
-ThirdExample
+iPHone Application ThirdExample
 ============
 OpenGL ES2によるShaderを用いた描画サンプルプログラムを作成する.
 iPhone画面上の正方形領域をメッシュに分けて, メッシュ頂点をランダムに移動する.
