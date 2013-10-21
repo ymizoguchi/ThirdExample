@@ -17,7 +17,7 @@
 
 // メッシュを2つの三角形で表して GL_TRIANGLES で表示
 // 分割するメッシュ数を MESH_X, MESH_Y で指定する
-#define MESH_X 3
+#define MESH_X 5
 #define MESH_Y MESH_X
 #define MESH_X1 (MESH_X + 1)
 #define MESH_Y1 MESH_X1
@@ -159,7 +159,7 @@ point2d_t* mesh_points[MESH_X1][MESH_Y1];
     size_t width = CGImageGetWidth(spriteImage);
     size_t height = CGImageGetHeight(spriteImage);
     GLubyte * spriteData = (GLubyte *) calloc(width*height*4, sizeof(GLubyte));
-    CGContextRef spriteContext = CGBitmapContextCreate(spriteData, width, height, 8, width*4, CGImageGetColorSpace(spriteImage), kCGImageAlphaPremultipliedLast);
+    CGContextRef spriteContext = CGBitmapContextCreate(spriteData, width, height, 8, width*4, CGImageGetColorSpace(spriteImage), (CGBitmapInfo) kCGImageAlphaPremultipliedLast);
     CGContextDrawImage(spriteContext, CGRectMake(0, 0, width, height), spriteImage);
     CGContextRelease(spriteContext);
     glGenTextures(1, &_texname);

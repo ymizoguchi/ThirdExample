@@ -2,7 +2,7 @@
 //  AppDelegate.m
 //  ThirdExample
 //
-//  Created by Yoshihiro Mizoguchi on 2013/08/18.
+//  Created by Yoshihiro Mizoguchi on 2013/08/18. 2013/10/22.
 //  Copyright (c) 2013年 Yoshihiro Mizoguchi. All rights reserved.
 //
 
