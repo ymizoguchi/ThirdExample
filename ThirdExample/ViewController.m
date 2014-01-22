@@ -183,8 +183,10 @@ point2d_t* mesh_points[MESH_X1][MESH_Y1];
 // マウス入力時に呼ばれる関数 (クリック位置の上下で仰角を増減)
 - (void)handleTapFrom:(UITapGestureRecognizer *)recognizer {
     CGPoint touchLocation = [recognizer locationInView:recognizer.view];
-    touchLocation = CGPointMake(touchLocation.x, 320 - touchLocation.y);
-    
+    touchLocation = CGPointMake(touchLocation.x, self.view.bounds.size.height - touchLocation.y);
+    NSLog(@"touchopoint(%f,%f)",touchLocation.x,touchLocation.y);
+    NSLog(@"bounds(%f,%f)",self.view.bounds.size.width,self.view.bounds.size.height);
+
     if (_clicked==MOVING) {
         _clicked=STOPED;
         for(int x=0;x<=MESH_X;x++) {
@@ -216,9 +218,11 @@ point2d_t* mesh_points[MESH_X1][MESH_Y1];
     
     // 画面サイズの調整
     float aspect = fabsf(self.view.bounds.size.width / self.view.bounds.size.height);
-    GLKMatrix4 projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(65.0f), aspect, 0.1f, 100.0f);
+    // GLKMatrix4 projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(65.0f), aspect, 0.1f, 100.0f);
+    GLKMatrix4 projectionMatrix = GLKMatrix4MakeOrtho(-0.5f, 1.5f, -0.5f/aspect, 1.5f/aspect, 0.0f, 1.0f);
     // 視点は(x,y)=(0.5,0.5)が中心に見えるように上下左右に移動し, z軸方向は少し下がる.
-    GLKMatrix4 modelViewMatrix = GLKMatrix4MakeTranslation(-0.5f, -0.5f, -1.5f);
+    // GLKMatrix4 modelViewMatrix = GLKMatrix4MakeTranslation(-0.5f, -0.5f, -1.5f);
+    GLKMatrix4 modelViewMatrix = GLKMatrix4MakeTranslation(-0.0f, -0.0f, 0.0f);
     // 変換行列を指定する.
     _modelViewProjectionMatrix = GLKMatrix4Multiply(projectionMatrix, modelViewMatrix);
     glUniformMatrix4fv(_modelViewUniform, 1, 0, _modelViewProjectionMatrix.m);
