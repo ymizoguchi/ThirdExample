@@ -185,6 +185,8 @@ point2d_t* mesh_points[MESH_X1][MESH_Y1];
     CGPoint touchLocation = [recognizer locationInView:recognizer.view];
     touchLocation = CGPointMake(touchLocation.x, self.view.bounds.size.height - touchLocation.y);
     NSLog(@"touchopoint(%f,%f)",touchLocation.x,touchLocation.y);
+    NSLog(@"npoint(%f,%f)",(touchLocation.x/self.view.bounds.size.width-0.5f)*2.0f,
+                            (touchLocation.y/self.view.bounds.size.height-0.5f));
     NSLog(@"bounds(%f,%f)",self.view.bounds.size.width,self.view.bounds.size.height);
 
     if (_clicked==MOVING) {
