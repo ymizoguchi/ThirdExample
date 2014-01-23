@@ -61,7 +61,9 @@ point2d_t* mesh_points[MESH_X1][MESH_Y1];
     // 移動切り替えのためのカウンター
     int _speedcounter;
 #define SPEEDCOUNTER_MAX    30
-    
+
+    // aspect = fabsf(self.view.bounds.size.width / self.view.bounds.size.height)
+    float aspect;
 }
 
 // Open GL描画管理オブジェクト
@@ -183,11 +185,14 @@ point2d_t* mesh_points[MESH_X1][MESH_Y1];
 // マウス入力時に呼ばれる関数 (クリック位置の上下で仰角を増減)
 - (void)handleTapFrom:(UITapGestureRecognizer *)recognizer {
     CGPoint touchLocation = [recognizer locationInView:recognizer.view];
-    touchLocation = CGPointMake(touchLocation.x, self.view.bounds.size.height - touchLocation.y);
+    touchLocation = CGPointMake(touchLocation.x/self.view.bounds.size.width,
+                                touchLocation.y/self.view.bounds.size.height);
+    //NSLog(@"aspect(%f)",1.0f/aspect);
     NSLog(@"touchopoint(%f,%f)",touchLocation.x,touchLocation.y);
-    NSLog(@"npoint(%f,%f)",(touchLocation.x/self.view.bounds.size.width-0.5f)*2.0f,
-                            (touchLocation.y/self.view.bounds.size.height-0.5f));
+    //NSLog(@"npoint(%f,%f)",(touchLocation.x/self.view.bounds.size.width),
+    //                        (touchLocation.y/self.view.bounds.size.height));
     NSLog(@"bounds(%f,%f)",self.view.bounds.size.width,self.view.bounds.size.height);
+    //NSLog(@"frame(%f,%f)",self.view.frame.size.width,self.view.frame.size.height);
 
     if (_clicked==MOVING) {
         _clicked=STOPED;
@@ -219,12 +224,13 @@ point2d_t* mesh_points[MESH_X1][MESH_Y1];
     glUseProgram(_program);
     
     // 画面サイズの調整
-    float aspect = fabsf(self.view.bounds.size.width / self.view.bounds.size.height);
+    aspect = fabsf(self.view.bounds.size.width / self.view.bounds.size.height);
     // GLKMatrix4 projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(65.0f), aspect, 0.1f, 100.0f);
-    GLKMatrix4 projectionMatrix = GLKMatrix4MakeOrtho(-0.5f, 1.5f, -0.5f/aspect, 1.5f/aspect, 0.0f, 1.0f);
+    GLKMatrix4 projectionMatrix = GLKMatrix4MakeOrtho(-1.0f, 1.0f, -1.0f/aspect, 1.0f/aspect, 0.0f, 1.0f);
     // 視点は(x,y)=(0.5,0.5)が中心に見えるように上下左右に移動し, z軸方向は少し下がる.
     // GLKMatrix4 modelViewMatrix = GLKMatrix4MakeTranslation(-0.5f, -0.5f, -1.5f);
-    GLKMatrix4 modelViewMatrix = GLKMatrix4MakeTranslation(-0.0f, -0.0f, 0.0f);
+    // GLKMatrix4 modelViewMatrix = GLKMatrix4MakeTranslation(0.5f, 0.5f*2.0f*aspect, 0.0f);
+    GLKMatrix4 modelViewMatrix = GLKMatrix4MakeTranslation(-0.5f, -0.5f, 0.0f);
     // 変換行列を指定する.
     _modelViewProjectionMatrix = GLKMatrix4Multiply(projectionMatrix, modelViewMatrix);
     glUniformMatrix4fv(_modelViewUniform, 1, 0, _modelViewProjectionMatrix.m);
