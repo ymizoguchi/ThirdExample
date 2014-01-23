@@ -186,11 +186,10 @@ point2d_t* mesh_points[MESH_X1][MESH_Y1];
 - (void)handleTapFrom:(UITapGestureRecognizer *)recognizer {
     CGPoint touchLocation = [recognizer locationInView:recognizer.view];
     touchLocation = CGPointMake(touchLocation.x/self.view.bounds.size.width,
-                                touchLocation.y/self.view.bounds.size.height);
-    //NSLog(@"aspect(%f)",1.0f/aspect);
-    NSLog(@"touchopoint(%f,%f)",touchLocation.x,touchLocation.y);
-    //NSLog(@"npoint(%f,%f)",(touchLocation.x/self.view.bounds.size.width),
-    //                        (touchLocation.y/self.view.bounds.size.height));
+                                1.0f-touchLocation.y/self.view.bounds.size.height);
+    NSLog(@"aspect(%f)",1.0f/aspect);
+    NSLog(@"touchopoint(%f,%f)",(touchLocation.x-(2.0f-1.0f)/2.0f/2.0f)*2.0f,
+                                 (touchLocation.y-1.0f/3.0f)/aspect*2.0f);
     NSLog(@"bounds(%f,%f)",self.view.bounds.size.width,self.view.bounds.size.height);
     //NSLog(@"frame(%f,%f)",self.view.frame.size.width,self.view.frame.size.height);
 
